@@ -41,6 +41,15 @@ namespace ForumAPI.Controllers
 
             return post;
         }
+        
+        //**!!NY!!!!
+        //Get Posts by subcategory ID
+        [HttpGet("SubCategoryId/{subCategoryId}")]
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostsBySubCategoryId(Guid subCategoryId)
+        {
+            return await _context.Posts.Where(p => p.SubCategoryId == subCategoryId).ToListAsync();
+        }
+       
 
         // PUT: api/Posts/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
