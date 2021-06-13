@@ -42,6 +42,16 @@ namespace ForumAPI.Controllers
             return comment;
         }
 
+        //NY*!!!!!
+        // Comments by PostID
+        [HttpGet("PostId/{postid}")]
+        public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByPostId(Guid postId)
+        {
+            return await _context.Comments.Where(c => c.PostId == postId).ToListAsync();
+        }
+
+
+
         // PUT: api/Comments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
