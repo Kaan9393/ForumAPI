@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/snackis-kg/databases/DBSnackisForumAPI",
+      "type": "mssql.azure",
+      "connectionId": "ForumDB",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
